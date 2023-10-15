@@ -2,7 +2,7 @@ FROM alpine:3.18.4
 MAINTAINER Mac Liu <linuzilla@gmail.com>
 
 RUN apk update && apk upgrade && \
-	apk add tmux openssh openjdk17-jdk && \
+	apk add tmux openssh openjdk17-jdk mariadb-client && \
 	rm -fr /var/cache/apk/*
 # ADD jdk-17.0.8.tar.gz /usr/local/
 
