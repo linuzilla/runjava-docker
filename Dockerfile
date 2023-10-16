@@ -2,7 +2,7 @@ FROM alpine:3.18.4
 MAINTAINER Mac Liu <linuzilla@gmail.com>
 
 RUN apk update && apk upgrade && \
-	apk add tmux openssh openjdk17-jdk mariadb-client && \
+	apk add tmux openssh openjdk17-jdk mariadb-client tzdata && \
 	rm -fr /var/cache/apk/*
 # ADD jdk-17.0.8.tar.gz /usr/local/
 
@@ -15,6 +15,7 @@ RUN chmod 755 /init.sh /usr/local/bin/run.sh
 VOLUME [ "/workspace" ]
 
 ENV jarName jarName
+ENV TZ Asia/Taipei
 
 EXPOSE 8080
 EXPOSE 22

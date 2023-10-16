@@ -3,6 +3,9 @@
 # export JAVA_HOME=/usr/local/jdk-17.0.8
 # export PATH=${JAVA_HOME}/bin:${PATH}
 
+cp /usr/share/zoneinfo/${TZ} /etc/localtime
+echo "${TZ}" > /etc/timezone
+
 cd /workspace
 
 [ -f "hostfiles.tar" ] && tar xpf hostfiles.tar -C /etc/ssh && chmod 600 /etc/ssh/ssh_host_*_key
